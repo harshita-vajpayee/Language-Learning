@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(24, 128, 207);
+        }
+        
+        .container {
+            width: 35rem;
+            box-shadow: 0px 0px 5px grey;
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        
+        .col {
+            text-align: justify;
+            padding: 15px;
+            width: 95%;
+        }
+        
+        #submit {
+            width: 100%;
+            background-color: rgb(47, 8, 73);
+            transition: 0.5s;
+            color: white;
+            outline: none;
+            border: none;
+            font-size: 25px;
+            display: block;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        #submit:hover {
+            background-color: rgb(34, 6, 53);
+        }
+        
+        .box {
+            box-shadow: 0px -1px 1px grey;
+            width: 100%;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        img {
+            width: 400px;
+            /* Set your preferred width */
+            height: 300px;
+            /* Maintain aspect ratio */
+            /* Set your preferred maximum height */
+            border: 1px solid #ccc;
+            /* Optional: Add a border for better visibility */
+        }
+        
+        .btn {
+            color: #fdfdfd;
+            background: #002848;
+            padding: 12px 17px;
+            margin: 25px;
+            font-family: 'OpenSansBold', sans-serif;
+            border: 3px solid #31302B;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 0 #31302B;
+            -webkit-transition: all ease 0.8s;
+            -moz-transition: all ease 0.8s;
+            transition: all ease 0.8s;
+        }
+        
+        .btn:hover {
+            box-shadow: inset 0 100px 0 0 #31302B;
+            color: #FFF;
+        }
+        
+        button {
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div class="container">
+            <img id="quizImage" src="" alt="Quiz Image">
+        </div>
+
+        <div>
+            <button class="btn" onclick="showNextImage()">Next</button>
+        </div>
+    </section>
+    <script>
+        const imagePaths = ["https://st2.depositphotos.com/19527452/46801/v/1600/depositphotos_468014002-stock-illustration-woman-man-antonyms-word-card.jpg", "https://i.pinimg.com/originals/39/94/22/39942283d8adb21ef652c2d1167103eb.png", "https://5.imimg.com/data5/SELLER/Default/2023/8/332569814/YM/KP/MH/49666355/birds-picture-flash-cards-set.jpeg", "https://s3.amazonaws.com/media.llb.re/pub/notes/sports_en1.jpg", "https://ezpzlearn.com/CMS/Content/Games/Mini%20Game%20Cards/action%20verbs%20Game%20Cards.jpg", "https://img.freepik.com/free-vector/hand-drawn-subject-pronouns-flash-cards_52683-125227.jpg", "https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/ab/32/t-l-085-fruit-flashcards-_ver_1.jpg", "https://images.twinkl.co.uk/tw1n/image/private/t_630_eco/image_repo/3b/b7/t-m-1557-vegetable-words-flashcards-_ver_2.webp"];
+        let index = 0;
+
+        const showNextImage = () => {
+            if (index < imagePaths.length - 1) {
+                index++;
+                document.getElementById("quizImage").src = imagePaths[index];
+            } else {
+                alert("End of the quiz!");
+                window.location.href = "english";
+                // You can redirect to a dashboard or perform other actions here
+            }
+        };
+
+        // Display the first image on page load
+        document.getElementById("quizImage").src = imagePaths[index];
+    </script>
+
+</body>
+
+</html>

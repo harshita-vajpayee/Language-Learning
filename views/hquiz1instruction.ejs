@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Quiz</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        body {
+            margin: 0px;
+            background-color: #E5E0FF;
+        }
+        
+        .dashboard {
+            padding: 0px 15px;
+            margin: 0 auto;
+        }
+        /* ==========================
+Navigation
+============================= */
+        
+        .dashboard .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .dashboard .navigation img.logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+        
+        .dashboard .navigation img.user {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+        
+        .dashboard .navigation div .material-icons-outlined {
+            margin-left: 5px;
+            margin-right: 5px;
+            font-size: 30px;
+            color: #727272;
+        }
+        /* ==========================
+Main Dashboard
+============================= */
+        /* My Project */
+        
+        .dashboard .main .title {
+            margin-bottom: 30px;
+        }
+        
+        .dashboard .main .title h1 {
+            font-size: 35px;
+            line-height: 0px;
+        }
+        
+        .dashboard .main .title {
+            margin-top: 40px;
+        }
+        
+        .dashboard .main .title label {
+            margin-right: 15px;
+            color: #727272;
+            font-size: 16px;
+        }
+        
+        .dashboard .main .title select {
+            border: none;
+            font-size: 16px;
+            background-color: rgba( 0 0 0 / 0);
+        }
+        
+        .dashboard .navigation div {
+            margin-top: 19vh;
+            margin-bottom: 19vh;
+        }
+        
+        .dashboard .navigation div span {
+            margin-top: 5vh;
+        }
+        /* Project List */
+        
+        .category_color1 {
+            background-color: tan !important;
+        }
+        
+        .category_color2 {
+            background-color: rebeccapurple !important;
+        }
+        
+        .category_color3 {
+            background-color: sandybrown !important;
+        }
+        
+        .category_color4 {
+            background-color: lightcyan !important;
+        }
+        
+        @media only screen and (min-width: 1024px) {
+            .dashboard .navigation,
+            .dashboard .navigation div span,
+            section.secondary {
+                display: block;
+            }
+            .dashboard .navigation {
+                width: 60px;
+                position: fixed;
+                z-index: 10;
+            }
+            section.main {
+                width: 60%;
+                margin-left: 30px;
+                margin-right: 20px;
+            }
+            section.second {
+                width: 80%;
+                padding-top: 0px;
+                position: fixed;
+                top: 50px;
+                right: 0px;
+                background-color: transparent;
+            }
+            .dashboard .navigation div {
+                margin-top: 19vh;
+                margin-bottom: 19vh;
+            }
+            .dashboard .navigation div span {
+                margin-top: 5vh;
+            }
+        }
+        
+        .dashboard .main .notification {
+            margin-top: 20px;
+        }
+        
+        .dashboard .main .notification span:nth-child(1) {
+            margin-right: 15px;
+            position: relative;
+        }
+        
+        button {
+            position: relative;
+            display: block;
+            width: 25em;
+            height: 10em;
+            margin: 2em;
+            border: 10px black;
+            outline: none;
+            letter-spacing: .2em;
+            font-weight: bold;
+            background: #dfdfdf;
+            cursor: pointer;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border-radius: 4px;
+        }
+        
+        @-webkit-keyframes ripple {
+            to {
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes ripple {
+            to {
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        @media only screen and (min-width: 1111px) {
+            section.main .project_list .project {
+                width: 32%;
+            }
+            section.main {
+                width: 65%;
+            }
+        }
+        
+        .material-icons-outlined {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            /* Preferred icon size */
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            /* Support for all WebKit browsers. */
+            -webkit-font-smoothing: antialiased;
+            /* Support for Safari and Chrome. */
+            text-rendering: optimizeLegibility;
+            /* Support for Firefox. */
+            -moz-osx-font-smoothing: grayscale;
+            /* Support for IE. */
+            font-feature-settings: 'liga';
+        }
+        
+        .second {
+            font-size: 20px;
+        }
+        
+        .notification {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            display: flex;
+            cursor: pointer;
+        }
+        
+        .notif-btn,
+        .account-btn {
+            border: none;
+            outline: none;
+            background-color: #E5E0FF;
+            margin-left: 0px;
+            cursor: pointer;
+            z-index: -1;
+        }
+        
+        .account-btn:hover::after {
+            content: "Click me!";
+            position: absolute;
+            color: #fff;
+            background-color: #333;
+            padding: 5px;
+            border-radius: 5px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .account-btn:hover::after {
+            opacity: 1;
+        }
+        
+        .button_sliding_bg {
+            color: #fdfdfd;
+            background: #002848;
+            padding: 12px 17px;
+            margin: 25px;
+            font-family: 'OpenSansBold', sans-serif;
+            border: 3px solid #31302B;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 0 #31302B;
+            -webkit-transition: all ease 0.8s;
+            -moz-transition: all ease 0.8s;
+            transition: all ease 0.8s;
+        }
+        
+        .button_sliding_bg:hover {
+            box-shadow: inset 0 100px 0 0 #31302B;
+            color: #FFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Dashboard -->
+
+        <section class="navigation">
+            <!-- Navigation -->
+            <img src="data:image/png;base64,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"
+                alt="anup Logo" class="logo">
+
+            <div>
+                <span class="material-icons-outlined"> dashboard </span>
+                <span class="material-icons-outlined"> trending_up </span>
+                <span class="material-icons-outlined"> translate </span>
+                <span class="material-icons-outlined"> insert_invitation </span>
+                <span class="material-icons-outlined">settings_suggest</span>
+            </div>
+
+        </section>
+        <!-- Navigation End -->
+
+        <section class="main" style="left:20%">
+            <section class="main">
+                <div class="notification">
+                    <button onclick="location.href='notification';" class="notif-btn"><span class="material-icons-outlined"> notifications </span></button>
+                    <button onclick="window.location.href='';" class="account-btn"><span class="material-icons-outlined"> person </span><%=user.username%></button>
+                </div>
+            </section>
+            <!-- Main End -->
+
+            <section class="second">
+                <!-- Secondary -->
+                <h1>Quiz 1
+                </h1>
+                <h1>Quiz Instructions</h1>
+                <p>Please read all these instructions before performing your quiz</p>
+                <div class="instruction_list" style="border: #727272; padding-right: 50px;text-align: justify;margin-right: 10px;">
+                    <!-- Project List -->
+                    <ol>
+                        <li>The quizzes consists of questions carefully designed to help you self-assess your comprehension of the information presented on the topics covered in the module</li>
+                        <li> Each question in the quiz is of multiple-choice or "true or false" format.</li>
+                        <li> Read each question carefully, and click on the button next to your response that is based on the information covered on the topic in the module.</li>
+                        <li>After responding to a question, click on the "Next Question" button at the bottom to go to the next question</li>
+                        <li>Each question has only one correct answer. Choose wisely</li>
+                        <li>The total score for the quiz is based on your responses to all questions. </li>
+                    </ol>
+                </div>
+
+                <div class="button_sliding_bg" id="startQuizButton">
+                    <a href="hquizone" style="color: #dfdfdf;">START QUIZ</a>
+                </div>
+
+            </section>
+            <!-- Secondary End -->
+
+    </div>
+    <!-- Dashboard End-->
+
+
+</body>
+
+</html>
