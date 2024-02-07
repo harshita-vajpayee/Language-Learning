@@ -10,7 +10,7 @@ require('dotenv').config()
 
 const User = require("./model/user_schema")
 mongoose.set("strictQuery", false);
-const dburi = process.env.SOURCE;
+const dburi = "mongodb+srv://harshitavajpayee04:learnMongo@cluster0.j0momhr.mongodb.net/";
 
 //mongo connection
 mongoose.connect(dburi)
